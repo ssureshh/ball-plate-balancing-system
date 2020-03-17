@@ -5,8 +5,8 @@ import serial_com as servos
 import time
 
 def main():
-    pid_x = pidlib.PID_controller()
-    pid_y = pidlib.PID_controller()
+    pid_x = pidlib.PID_controller("pid_x.conf")
+    pid_y = pidlib.PID_controller("pid_y.conf")
     cam = camlib.camera()
 
     x_center = 414
@@ -17,9 +17,12 @@ def main():
         error_x = x_center - cam.pos_x
         error_y = y_center - cam.pos_y
         #print("X_error : "+str(error_x)+"| Y error : "+str(error_y))
+
         pid_x.compute_PID(error_x, "X_AXIS")
         pid_y.compute_PID(error_y, "==Y_AXIS")
-        # print("X_output : "+str(pid_x.output)+"| Y output : "+str(pid_y.output))
+        # print("X_OUTPUT : "+str(pid_x.output)+"| Y_OUTPUT : "+str(pid_y.output))
+        servos.set_angles(pid_x.output, pid_y.output)
+
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
