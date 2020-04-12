@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'default';
+    src: url('default_font.ttf') format('truetype');
+}
+* {
+    margin:0;
+    padding: 0;
+    font-family: 'default';
+}
+.cont {
+    width: 80%;
+    /* border: 2px red solid; */
+    margin: auto;
+}
+
+.box1 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+} 
+main {
+    margin-top: 20px;
+}
+.box1 h1 {
+    display: inline;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+footer img {
+    width: 30px;
+}
+footer div {
+    border: 1px blueviolet dotted;
+    padding: 10px;
+}
+#heading h1 {
+    text-decoration: underline;
+}
+
+#toucharea {
+    margin-top: 50px;
+    text-align: center;
+}

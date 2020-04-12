@@ -1,7 +1,7 @@
 import serial
 import time
 
-port = "/dev/cu.usbmodem14201"
+port = "/dev/cu.usbmodem141201"
 baud = 115200
 
 
@@ -12,7 +12,7 @@ if ser.is_open:
 
 def set_angles(out_x, out_y):
 
-    cmd = str(35-out_x)+":"+str(35)+"$"
+    cmd = str(35-out_x)+":"+str(35-out_y)+"$"
     ser.write(cmd.encode())
     print(cmd)
 

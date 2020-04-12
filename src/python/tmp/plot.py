@@ -1,33 +1,49 @@
 import matplotlib.pyplot as plt
 import random
+import camlib
 from itertools import count
-import matplotlib.animation as animation
+from matplotlib.animation import FuncAnimation
 # from matplotlib import style
 
+def main():
+    # while 1:
+    #     servos.set_angles(10,10)
+    #     time.sleep(0.25)
+    #     servos.set_angles(60,60)
+    #     time.sleep(0.25)
+    # servos.close_connection()
+    
+    # pid_x = pid.pid_controller()
 
-plt.style.use('fivethirtyeight')
+    cam = camlib.camera()
+    while 1:
+        cam.calc_currentPos()
 
-x_vals = []
-y_vals = []
-
-index = count()
-
-def animate(i):
-    x_vals.append(next(index))
-    y_vals.append(random.randint(0,5))
-    plt.plot(x_vals, y_vals)
-
-ani = FuncAnimation(plt.gcf(), animate, interval=1000)
-
-plt.plot(x_vals, y_vals)
-
-
-
-plt.tight_layout()
-plt.show()
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    cam.reset()
 
 
+if __name__ == "__main__":
+    main()
 
+# plt.style.use('fivethirtyeight')
+
+# x_vals = []
+# y_vals = []
+
+# index = count()
+
+# def animate(i):
+#     x_vals.append(next(index))
+#     y_vals.append(random.randint(0,100))
+#     plt.cla()
+#     plt.plot(x_vals, y_vals)
+
+# ani = FuncAnimation(plt.gcf(), animate, interval=10)
+
+# plt.tight_layout()
+# plt.show()
 
 
 
