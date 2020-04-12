@@ -1,2 +1,4 @@
 kode/
 src/python_backup
+src/python/__pycache__/
+src/python/tmp/
