@@ -43,7 +43,7 @@ footer img {
     width: 30px;
 }
 footer div {
-    border: 1px blueviolet dotted;
+    border: 1px blueviolet solid;
     padding: 10px;
 }
 #heading h1 {
@@ -53,4 +53,24 @@ footer div {
 #toucharea {
     margin-top: 50px;
     text-align: center;
+}
+
+.currentPID h1 {
+    display: inline-block;
+}
+.currentPID {
+    margin-top: 20px;
+    border: blueviolet 1px dashed;
+}
+#settings {
+    text-align: center;
+}
+.updatePID h1 {
+    display: inline-block;
+}
+.updatePID {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: green 1px dashed;
 }
