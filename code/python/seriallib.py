@@ -14,7 +14,7 @@ def set_angles(out_x, out_y):
 
     cmd = str(35-out_x)+":"+str(35-out_y)+"$"
     ser.write(cmd.encode())
-    print(cmd)
+    # print(cmd)
 
 def close_connection():
     ser.close()
