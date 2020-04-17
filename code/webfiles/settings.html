@@ -9,28 +9,36 @@
 </head>
 <body>
     <div id="heading" class="cont">
-        <h1>User Input</h1>
+        <h1>Settings</h1>
     </div>
-    <div class="cont box1" style="border: 3px solid red;">
-        <h1>Current Pos</h1>
-        <h1 id="cur_XY">xxx,yyy</h1>
+
+    <div class="updatePID cont">
+        <form>
+            <h1 style="text-decoration: underline;"> X axis:</h1><br>
+            <label for="p_gain">P :</label>
+            <input type="text" id="p_gain" name="p_gain"><br>
+
+            <label for="i_gain">I :</label>
+            <input type="text" id="i_gain" name="i_gain"><br>
+
+            <label for="d_gain">D :</label>
+            <input type="text" id="d_gain" name="d_gain"><br><br>
+
+            <h1 style="text-decoration: underline;"> Y axis:</h1><br>
+            <label for="p_gain">P :</label>
+            <input type="text" id="p_gain" name="p_gain"><br>
+
+            <label for="i_gain">I :</label>
+            <input type="text" id="i_gain" name="i_gain"><br>
+
+            <label for="d_gain">D :</label>
+            <input type="text" id="d_gain" name="d_gain"><br><br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
-    <div class="cont box1" style="border: 3px solid green;">
-        <h1>Desired Pos</h1>
-        <h1 id="des_XY">xxx,yyy</h1>
-    </div>
-    <div id="toucharea" class="cont">
-        <canvas id="myCanvas" width="300" height="300">
-            Your browser does not support the HTML5 canvas tag.
-        </canvas>
-    </div> 
-    <div class="cont" id="menu-option">
-        <h1> Select option :</h1>
-        <select id="option">
-            <option value="center">Center</option>
-            <option value="center">User</option>
-        </select>
-    </div>
+
+
+
 
     <footer class="cont">
         <div>

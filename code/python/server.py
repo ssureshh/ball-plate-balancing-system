@@ -11,7 +11,7 @@ def index():
 
 @sio.on('connect')
 def connect():
-    print("A Client Connected")
+    print(f'\n\n A Client Connected : {request.sid}\n\n')
 
 @sio.on('coord_event')
 def send_coord(data):
@@ -19,6 +19,14 @@ def send_coord(data):
     emit('coords', coord_json, broadcast=True)
     print(f'Data sent : {coord_json}')
 
+@sio.on('des_event')
+def send_des(data):
+    print(f'DES : {data}')
+    emit('des_client', data, broadcast=True)
+@sio.on('pid_event')
+def send_des(data):
+    print(f'PID : {data}')
+    emit('pid_client', data, broadcast=True)
 
 if __name__ == "__main__":
     sio.run(app, debug=True, port=8000, host="0.0.0.0")
