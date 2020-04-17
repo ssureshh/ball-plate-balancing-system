@@ -24,7 +24,7 @@ class camera:
         self.hsvUp = (int(hh),int(sh),int(vh))
         #self.hsvLow = (24,210,212)
         #self.hsvUp = (24,210,212)
-        self.capture = cv2.VideoCapture(0)
+        self.capture = cv2.VideoCapture(1)
         self.kernel = np.ones((5,5),np.uint8)
     
     # func. to open cam, process and find the x,y of ball

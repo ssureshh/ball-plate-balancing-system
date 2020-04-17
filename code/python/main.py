@@ -1,8 +1,10 @@
-import camlib
+import time
 import cv2
+import camlib
 import pidlib
 import seriallib as servos
-import time
+# import socketlib as socket
+
 
 def main():
     pid_x = pidlib.PID_controller("pid_x.conf")
@@ -14,6 +16,7 @@ def main():
 
     while 1:
         cam.calc_currentPos()
+        # socket.send_coords(cam.pos_x,cam.pos_y)
         error_x = x_center - cam.pos_x
         error_y = y_center - cam.pos_y
         #print("X_error : "+str(error_x)+"| Y error : "+str(error_y))

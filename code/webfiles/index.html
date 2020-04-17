@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <title>Ball Plate System</title>
+</head>
+<body>
+    <div id="heading" class="cont">
+        <h1>Home</h1>
+    </div>
+    <div class="cont box1">
+        <h1>Current Pos</h1>
+        <h1 id="cur_XY">xxx,yyy</h1>
+    </div>
+    <div class="cont box1">
+        <h1>Desired Pos</h1>
+        <h1 id="des_XY">xxx,yyy</h1>
+    </div>
+    <div id="toucharea" class="cont">
+        <canvas id="myCanvas" width="300" height="300">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+    </div> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
