@@ -1,7 +1,7 @@
 import serial
 import time
 
-port = "/dev/cu.usbmodem141201"
+port = "/dev/cu.usbmodem141101"
 baud = 115200
 
 
