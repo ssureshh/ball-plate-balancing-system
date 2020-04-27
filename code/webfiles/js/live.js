@@ -12,13 +12,18 @@ socket.on('connect', function() {
 
 socket.on('coords', data => {
     js_data = JSON.parse(data);
-    console.log(`[RECV.]X : ${js_data.x}, Y: ${js_data.y}`)
+
+    new_x = pttX(js_data.x);
+    new_y = pttY(js_data.y);
+    new_x = Math.round(new_x);
+    new_y = Math.round(new_y); 
+
+    // console.log(`[RECV.- PLATE ]X : ${new_x}, Y: ${new_y}`)
+    //console.log(`[RECV.]X : ${js_data.x}, Y: ${js_data.y}`)
+
     cur_XY.innerHTML = `${js_data.x},${js_data.y}`
     ctx.beginPath();
-    ctx.arc(js_data.x,js_data.y,10,0,2*Math.PI);
-    ctx.strokeStyle = '#fc0303';
-    ctx.fillStyle = 'orange';
-    ctx.fill();
+    ctx.arc(new_x,new_y,10,0,2*Math.PI);
     ctx.stroke();
 });
 
@@ -33,4 +38,12 @@ function ttpY(num) {
 
 function canvas_clear() {
     ctx.clearRect(0, 0, 300, 300);
+}
+function pttX(num) {
+    num_new = ((num - 20)/730)*300;
+    return num_new;
+}
+function pttY(num) {
+    num_new = ((num - 10)/590)*300;
+    return num_new;
 }

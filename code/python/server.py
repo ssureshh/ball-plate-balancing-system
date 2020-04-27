@@ -9,23 +9,23 @@ sio = SocketIO(app, cors_allowed_origins='*')
 def index():
     return render_template("index.html")
 
-@sio.on('connect')
-def connect():
-    print(f'\n\n A Client Connected : {request.sid}\n\n')
+# @sio.on('connect')
+# def connect():
+#     # print(f'\n\n A Client Connected : {request.sid}\n\n')
 
 @sio.on('coord_event')
 def send_coord(data):
     coord_json = json.dumps(data)
     emit('coords', coord_json, broadcast=True)
-    print(f'Data sent : {coord_json}')
+    # print(f'Data sent : {coord_json}')
 
 @sio.on('des_event')
 def send_des(data):
-    print(f'DES : {data}')
+    # print(f'DES : {data}')
     emit('des_client', data, broadcast=True)
 @sio.on('pid_event')
 def send_des(data):
-    print(f'PID : {data}')
+    # print(f'PID : {data}')
     emit('pid_client', data, broadcast=True)
 
 if __name__ == "__main__":

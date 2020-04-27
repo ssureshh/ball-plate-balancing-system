@@ -20,7 +20,7 @@ def printmsg(data):
     global des_Y
     des_X = data['x']
     des_Y = data['y']
-    print(f'X:{des_X}, y:{des_Y}')
+    # print(f'X:{des_X}, y:{des_Y}')
 
 # @sio.on('pid_client')
 # def printmsg(data):
@@ -53,4 +53,4 @@ def send_coords(x, y):
         'y':y
     }
     sio.emit('coord_event', send_coords)
-    print(send_coords)
+    # print(send_coords)

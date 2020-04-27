@@ -33,13 +33,14 @@ function getMousePosition(canvas, event) {
     y = Math.round(y); 
     console.log("Coordinate x: " + x,  
                 "Coordinate y: " + y); 
-    des_XY.innerHTML = `${x},${y}`
+
     new_x = ttpX(x);
     new_y = ttpY(y);
     new_x = Math.round(new_x);
     new_y = Math.round(new_y); 
     
     console.log("Coordinate x: " + new_x, "Coordinate y: " + new_y); 
+    des_XY.innerHTML = `${new_x},${new_y}`
 
     socket.emit('des_event', {"x":new_x, "y":new_y});
     ctx.clearRect(0, 0, 300, 300);
@@ -63,12 +64,57 @@ socket.on('message', data => {
 
     // socket.emit('message', {data: 'I\'m connected!'});
 */
+/*
 
+A----x-----B  to C-----Y------D
+
+Y = (X-A)/(B-A) * (D-C) + C
+
+A = 0
+B-A = 300
+D-C = 500
+C = 150
+
+*/
 function ttpX(num) {
     num_new = ((num - 0)/300)*500 + 150;
     return num_new;
 }
 function ttpY(num) {
     num_new = ((num - 0)/300)*500 + 50;
+    return num_new;
+}
+
+
+/*
+0-300
+150-650
+
+X;
+A = 20 
+B = 750
+C = 0
+D = 300
+B-A = 730
+D-C = 300
+C = 0
+
+y:
+A = 10 
+B = 600
+C = 0
+D = 300
+B-A = 590
+D-C = 300
+C = 0
+
+Y = (X-A)/(B-A) * (D-C) + C
+*/ 
+function pttX(num) {
+    num_new = ((num - 20)/730)*300;
+    return num_new;
+}
+function pttY(num) {
+    num_new = ((num - 10)/590)*300;
     return num_new;
 }
