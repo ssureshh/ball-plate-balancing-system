@@ -9,10 +9,29 @@
 </head>
 <body>
     <div id="heading" class="cont">
-        <h1>Center point</h1>
+        <h1>Real-time</h1>
     </div>
+    <div class="cont box1" style="border: 3px solid red;">
+        <h1>Current Pos</h1>
+        <h1 id="cur_XY">xxx,yyy</h1>
+    </div>
+    <div id="toucharea" class="cont">
+        <canvas id="myCanvas2" width="300" height="300">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+    </div>
+    <div class="cont" id="clr_btn">
+        <br><br>
+        <button onclick="canvas_clear()">Clear</button>
+    </div> 
 
     <footer class="cont">
+        <div>
+            <a href="home.html">
+                <img src="images/house.png" alt="home">
+                <h3>Home</h3>
+            </a>
+        </div>
         <div>
             <a href="index.html">
                 <img src="images/touch.png" alt="home">
@@ -22,20 +41,17 @@
         <div>
             <a href="center.html">
                 <img src="images/center.png" alt="home">
-                <h3>Center</h3>
+                <h3>Live</h3>
             </a>
         </div>
         <div>
-            <a href="settings.html">
-                <img src="images/settings.png" alt="Settings">
-                <h3>Settings</h3>
+            <a href="both.html">
+                <img src="images/both.png" alt="home">
+                <h3>Both</h3>
             </a>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
-    <script>
-        
-    </script>
+    <script src="js/live.js"></script>
 </body>
 </html>

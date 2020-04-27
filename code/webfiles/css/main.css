@@ -61,7 +61,17 @@ footer div {
     border: 3px solid #000000; 
     background-color:#a1fcff; 
 }
-
+#myCanvas2 {
+    border: 3px solid #000000; 
+    background-color:#b0fc79; 
+}
+#myCanvas3 {
+    border: 3px solid #000000; 
+    background-color:#f79d97; 
+}
+#clr_btn {
+    text-align: center;
+}
 #menu-option {
     text-align: center;
 }
@@ -74,4 +84,8 @@ footer div {
     padding-bottom: 10px;
     padding-left: 10px;
     border: green 1px dashed;
+}
+
+img {
+    width: 40px;
 }
