@@ -1,5 +1,5 @@
 // var socket  = io.connect('http://192.168.0.100:8000');
-var socket  = io.connect('192.168.0.103:8000');
+var socket  = io.connect('192.168.0.104:8000');
 var c       = document.getElementById("myCanvas");
 var ctx     = c.getContext("2d");
 var cur_XY  = document.getElementById("cur_XY");

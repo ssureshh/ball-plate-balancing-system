@@ -11,8 +11,8 @@ def main():
     pid_y = pidlib.PID_controller("pid_y.conf")
     cam = camlib.camera()
 
-    x_center = 410
-    y_center = 300
+    x_center = 400
+    y_center = 310
     user_x = x_center
     user_y = y_center
 
